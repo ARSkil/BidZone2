@@ -30,11 +30,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   closeBtn.addEventListener("click", () => modal.style.display = "none");
 
-  linkCardBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-    successMsg.style.display = "block";
-    setTimeout(() => successMsg.style.display = "none", 3000);
-  });
+ linkCardBtn.addEventListener("click", () => {
+  const number = document.getElementById("cardNumber").value.trim();
+  const expiry = document.getElementById("cardExpiry").value.trim();
+  const cvc = document.getElementById("cardCVC").value.trim();
+
+  if (number.length < 16 || expiry.length < 4 || cvc.length < 3) {
+    alert("❌ Пожалуйста, заполните все поля корректно.");
+    return;
+  }
+
+  modal.style.display = "none";
+  successMsg.style.display = "block";
+  setTimeout(() => successMsg.style.display = "none", 3000);
+});
+
 
   window.onclick = (event) => {
     if (event.target == modal) {
