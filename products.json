@@ -1,0 +1,17 @@
+[
+  {
+    "name": "iPhone 14",
+    "price": 899,
+    "image": "https://via.placeholder.com/300x150?text=iPhone+14"
+  },
+  {
+    "name": "MacBook Air",
+    "price": 1299,
+    "image": "https://via.placeholder.com/300x150?text=MacBook+Air"
+  },
+  {
+    "name": "Электросамокат",
+    "price": 500,
+    "image": "https://via.placeholder.com/300x150?text=E-Scooter"
+  }
+]
