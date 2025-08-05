@@ -21,14 +21,14 @@
     <section id="products"></section>
   </main>
 
- <!-- Modal -->
+<!-- Modal -->
 <div id="cardModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
     <h2>Привяжите карту</h2>
     <p>Введите данные карты. Деньги списаны не будут.</p>
 
-    <imput type="text" id="cardName" placeholder="Владелец карты" maxlenght="19">
+    <input type="text" id="cardHolder" placeholder="Имя держателя карты">
     <input type="text" id="cardNumber" placeholder="Номер карты" maxlength="19">
     <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5">
     <input type="text" id="cardCVC" placeholder="CVC" maxlength="3">
@@ -37,8 +37,8 @@
   </div>
 </div>
 
+<!-- Notification -->
+<div id="successMsg" class="notification">✅ Карта успешно привязана!</div>
 
-  <!-- Notification -->
-  <div id="successMsg" class="notification">✅ Карта успешно привязана!</div>
 </body>
 </html>
