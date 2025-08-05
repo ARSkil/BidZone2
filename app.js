@@ -5,7 +5,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const linkCardBtn = document.getElementById("linkCardBtn");
   const successMsg = document.getElementById("successMsg");
 
-  // Загружаем тестовые товары
+  const loggedIn = localStorage.getItem("bidzoneLoggedIn") === "true";
+  const userEmail = localStorage.getItem("bidzoneUserEmail");
+  const cardLinked = localStorage.getItem("bidzoneCardLinked") === "true";
+
+  // Отображение пользователя в шапке
+  if (loggedIn) {
+    document.getElementById("loginLink").style.display = "none";
+    document.getElementById("userEmail").style.display = "inline";
+    document.getElementById("userEmail").textContent = `Привет, ${userEmail}`;
+    document.getElementById("logoutBtn").style.display = "inline";
+  }
+
+  document.getElementById("logoutBtn").addEventListener("click", () => {
+    localStorage.removeItem("bidzoneLoggedIn");
+    localStorage.removeItem("bidzoneUserEmail");
+    localStorage.removeItem("bidzoneCardLinked");
+    window.location.reload();
+  });
+
+  // Загружаем товары
   fetch("products.json")
     .then(res => res.json())
     .then(data => {
@@ -23,28 +42,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
       document.querySelectorAll(".bidBtn").forEach(btn => {
         btn.addEventListener("click", () => {
-          modal.style.display = "block";
+          if (!loggedIn) {
+            alert("❌ Сначала войдите в аккаунт!");
+            window.location.href = "login.html";
+            return;
+          }
+
+          if (!cardLinked) {
+            modal.style.display = "block";
+            return;
+          }
+
+          alert("✅ Ваша ставка принята!");
         });
       });
     });
 
+  // Закрыть модалку
   closeBtn.addEventListener("click", () => modal.style.display = "none");
 
- linkCardBtn.addEventListener("click", () => {
-  const number = document.getElementById("cardNumber").value.trim();
-  const expiry = document.getElementById("cardExpiry").value.trim();
-  const cvc = document.getElementById("cardCVC").value.trim();
+  // Привязка карты
+  linkCardBtn.addEventListener("click", () => {
+    const number = document.getElementById("cardNumber").value.trim();
+    const expiry = document.getElementById("cardExpiry").value.trim();
+    const cvc = document.getElementById("cardCVC").value.trim();
 
-  if (number.length < 16 || expiry.length < 4 || cvc.length < 3) {
-    alert("❌ Пожалуйста, заполните все поля корректно.");
-    return;
-  }
+    if (number.length < 16 || expiry.length < 4 || cvc.length < 3) {
+      alert("❌ Пожалуйста, заполните все поля корректно.");
+      return;
+    }
 
-  modal.style.display = "none";
-  successMsg.style.display = "block";
-  setTimeout(() => successMsg.style.display = "none", 3000);
-});
-
+    localStorage.setItem("bidzoneCardLinked", "true");
+    modal.style.display = "none";
+    successMsg.style.display = "block";
+    setTimeout(() => successMsg.style.display = "none", 3000);
+  });
 
   window.onclick = (event) => {
     if (event.target == modal) {
