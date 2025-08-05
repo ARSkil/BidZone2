@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BidZone</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header>
+    <h1>BidZone</h1>
+  </header>
+
+  <main>
+    <section id="products"></section>
+  </main>
+
+  <!-- Modal -->
+  <div id="cardModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Привяжите карту</h2>
+      <p>Чтобы сделать ставку, нужно привязать карту. Деньги списаны не будут.</p>
+      <button id="linkCardBtn">Привязать карту</button>
+    </div>
+  </div>
+
+  <!-- Notification -->
+  <div id="successMsg" class="notification">✅ Карта успешно привязана!</div>
+</body>
+</html>
