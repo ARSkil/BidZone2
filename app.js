@@ -14,10 +14,10 @@ fetch("products.json")
                         <div class="auction-timer" id="timer-${product.id}">Осталось: 24:00:00</div>
 
                         <label>Ваша ставка ($)</label>
-                        <input type="number" id="bidAmount-${product.id}" placeholder="Например: 100">
+                        <input type="number" id="bidAmount-${product.id}" placeholder="Например: 100000">
 
                         <label>Максимальная ставка ($)</label>
-                        <input type="number" id="maxBidAmount-${product.id}" placeholder="Например: 200">
+                        <input type="number" id="maxBidAmount-${product.id}" placeholder="Например: 200000">
 
                         <button onclick="placeBid(${product.id})">Сделать ставку</button>
                     </div>
@@ -25,7 +25,7 @@ fetch("products.json")
             `;
             productList.innerHTML += productHTML;
 
-            startAuctionTimer(product.id, 600); // 10 минут
+            startAuctionTimer(product.id, 600); // 24 часа
         });
     });
 
