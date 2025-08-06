@@ -9,20 +9,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const userEmail = localStorage.getItem("bidzoneUserEmail");
   const cardLinked = localStorage.getItem("bidzoneCardLinked") === "true";
 
-  // Отображение пользователя в шапке
+document.addEventListener("DOMContentLoaded", () => {
+  const loggedIn = localStorage.getItem("bidzoneLoggedIn") === "true";
+  const userName = localStorage.getItem("bidzoneUserName");
+
   if (loggedIn) {
     document.getElementById("loginLink").style.display = "none";
     document.getElementById("userEmail").style.display = "inline";
-    document.getElementById("userEmail").textContent = `Привет, ${userEmail}`;
+    document.getElementById("userEmail").textContent = `Привет, ${userName}`;
     document.getElementById("logoutBtn").style.display = "inline";
   }
 
   document.getElementById("logoutBtn").addEventListener("click", () => {
-    localStorage.removeItem("bidzoneLoggedIn");
-    localStorage.removeItem("bidzoneUserEmail");
-    localStorage.removeItem("bidzoneCardLinked");
+    localStorage.clear();
     window.location.reload();
   });
+});
+
 
   // Загружаем товары
   fetch("products.json")
