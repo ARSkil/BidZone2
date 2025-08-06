@@ -4,20 +4,23 @@
     "name": "Электросамокат Xiaomi",
     "price": 300,
     "image": "images/scooter1.webp",
-    "description": "Мощный электросамокат Xiaomi с дальностью до 30 км на одном заряде."
+    "description": "Мощный электросамокат Xiaomi с дальностью до 30 км на одном заряде.",
+    "endTime": "2025-08-06T23:59:59"
   },
   {
     "id": 2,
     "name": "Электросамокат Kugoo",
     "price": 450,
     "image": "images/scooter2.jpg",
-    "description": "Удобный и складной Kugoo для городских поездок."
+    "description": "Удобный и складной Kugoo для городских поездок.",
+    "endTime": "2025-08-07T20:00:00"
   },
   {
     "id": 3,
     "name": "Электросамокат Segway",
     "price": 500,
     "image": "images/scooter3.jpg",
-    "description": "Современный Segway с улучшенной подвеской и мощным мотором."
+    "description": "Современный Segway с улучшенной подвеской и мощным мотором.",
+    "endTime": "2025-08-08T12:30:00"
   }
 ]
