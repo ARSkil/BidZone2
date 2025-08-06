@@ -3,18 +3,18 @@
         "id": 1,
         "name": "Электросамокат Xiaomi",
         "price": 300,
-        "image": "C:\Мои Web Сайты\BidZone\images\scooter1.webp""
+        "image": "C:/Мои Web Сайты/BidZone/images/scooter1.webp""
     },
     {
         "id": 2,
         "name": "Электросамокат Kugoo",
         "price": 450,
-        "image": "C:\Мои Web Сайты\BidZone\images\scooter1.jpg"
+        "image": "C:/Мои Web Сайты/BidZone/images/scooter2.jpg"
     },
     {
         "id": 3,
         "name": "Электросамокат Segway",
         "price": 500,
-        "image": "C:\Мои Web Сайты\BidZone\images\scooter1.jpg"
+        "image": "C:/Мои Web Сайты/BidZone/images/scooter3.jpg"
     }
 ]
