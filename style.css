@@ -103,52 +103,71 @@ button:hover {
   box-shadow: 0 0 5px rgba(0,161,214,0.5);
 }
 
-/* Блок пароля в правом верхнем углу */
-.password-top-right {
+/* Кнопка входа */
+.login-btn {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  top: 15px;
+  right: 25px;
+  background: #007bff;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.login-btn:hover {
+  background: #0056b3;
 }
 
-/* Иконка пароля */
-.password-wrapper {
-  position: relative;
+/* Модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
 }
-
-.password-icon {
-  position: absolute;
-  left: 10px;
-  top: 8px;
-  pointer-events: none;
+.modal-content {
+  background: #fff;
+  margin: 8% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 350px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-
-/* Поле пароля и другие поля побольше */
-.password-wrapper input,
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  padding: 10px 10px 10px 35px;
-  font-size: 1.1em;
-  width: 250px;
-  height: 40px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-/* Кнопка отмены */
-.cancel-btn {
-  padding: 10px 15px;
-  font-size: 1em;
-  background-color: #ccc;
-  border: none;
-  border-radius: 5px;
+.close-btn {
+  float: right;
+  font-size: 20px;
   cursor: pointer;
 }
 
-.cancel-btn:hover {
-  background-color: #bbb;
+/* Поля ввода */
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+/* Кнопки */
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+.btn-group button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn-group button:first-child {
+  background: #007bff;
+  color: white;
+}
+.btn-group button.cancel {
+  background: #ccc;
 }
 
