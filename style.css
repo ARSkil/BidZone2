@@ -1,255 +1,72 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f9f9f9;
-  margin: 0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
 }
 
 header {
-  background: #fff;
-  padding: 15px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
+    background: #007bff;
+    color: white;
+    padding: 15px;
+    text-align: center;
 }
 
-h1 {
-  margin: 0;
-  color: #00a1d6;
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
 }
 
-#products {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 20px;
-  padding: 20px;
+.product-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
 }
 
-.product {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  padding: 15px;
-  text-align: center;
+.product-card img {
+    max-width: 100%;
+    height: auto;
 }
 
-.product img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-button {
-  background: #00a1d6;
-  border: none;
-  color: white;
-  padding: 10px 15px;
-  margin-top: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-button:hover {
-  background: #008bb5;
-}
-
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 100;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-  background: #fff;
-  margin: 10% auto;
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-  text-align: center;
-}
-
-.close {
-  float: right;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.notification {
-  display: none;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #4CAF50;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-}
-.modal-content input {
-  width: 90%;
-  padding: 8px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.modal-content input:focus {
-  outline: none;
-  border-color: #00a1d6;
-  box-shadow: 0 0 5px rgba(0,161,214,0.5);
-}
-
-/* Кнопка входа */
-.login-btn {
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  background: #007bff;
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-}
-.login-btn:hover {
-  background: #0056b3;
-}
-
-/* Кнопка регистрации */
-.register-btn {
-  position: absolute;
-  top: 15px;
-  right: 100px;
-  background: #28a745;
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-}
-.register-btn:hover {
-  background: #1e7e34;
-}
-
-/* Модальное окно */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.4);
-}
-.modal-content {
-  background: #fff;
-  margin: 8% auto;
-  padding: 20px;
-  border-radius: 8px;
-  width: 350px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-.close-btn {
-  float: right;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* Поля ввода */
-.modal-content input {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 15px;
-}
-
-/* Кнопки */
-.auth-buttons {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  display: flex;
-  gap: 10px;
-}
-
-.login-btn, .register-btn, .google-btn {
-  background: #007bff;
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  text-align: center;
-}
-
-.register-btn { background: #28a745; }
-.register-btn:hover { background: #1e7e34; }
-
-.google-btn { background: #db4437; }
-.google-btn:hover { background: #c1351d; }
-
-.btn-group {
-  display: flex;
-  justify-content: space-between;
-}
-.btn-group button {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.btn-group button:first-child {
-  background: #007bff;
-  color: white;
-}
-.btn-group button.cancel {
-  background: #ccc;
-}
 .bid-section {
-  border: 1px solid #ddd;
-  padding: 15px;
-  margin-top: 10px;
-  background: #fff;
-  border-radius: 6px;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    padding-top: 10px;
 }
 
 .bid-section label {
-  font-size: 14px;
-  display: block;
-  margin-top: 8px;
+    display: block;
+    margin-top: 5px;
 }
 
 .bid-section input {
-  width: 100%;
-  padding: 6px;
-  margin-top: 4px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+    width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .bid-section button {
-  width: 100%;
-  background: #007bff;
-  color: #fff;
-  padding: 8px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+    margin-top: 8px;
+    width: 100%;
+    background: #007bff;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
+
 .bid-section button:hover {
-  background: #0056b3;
+    background: #0056b3;
 }
 
 .auction-timer {
-  font-weight: bold;
-  color: #d9534f;
-  margin-bottom: 10px;
+    font-weight: bold;
+    color: #d9534f;
 }
-
-
