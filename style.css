@@ -8,13 +8,13 @@ body {
 header {
     background: #007bff;
     color: white;
-    padding: 10px;
+    padding: 15px;
     text-align: center;
 }
 
 .product-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax (250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
     padding: 20px;
 }
@@ -44,7 +44,7 @@ header {
 }
 
 .bid-section input {
-    width: 10%;
+    width: 100%;
     padding: 6px;
     margin-top: 4px;
     border: 1px solid #ccc;
@@ -53,7 +53,7 @@ header {
 
 .bid-section button {
     margin-top: 8px;
-    width: 10%;
+    width: 100%;
     background: #007bff;
     color: white;
     padding: 8px;
