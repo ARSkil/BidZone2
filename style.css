@@ -6,8 +6,8 @@ body {
 }
 
 header {
-    background: #007bff;
-    color: white;
+    background: #fffff;
+    color: Blue;
     padding: 15px;
     text-align: center;
 }
@@ -53,7 +53,7 @@ header {
 
 .bid-section button {
     margin-top: 8px;
-    width: 100%;
+    width: 50%;
     background: #007bff;
     color: white;
     padding: 8px;
