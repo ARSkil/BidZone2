@@ -41,15 +41,6 @@ document.getElementById("loginBtn").addEventListener("click", () => {
     alert("Неверный email или пароль");
   }
 });
-// Конфиг Firebase (замени на свой)
-const firebaseConfig = {
-  apiKey: "pk_test_51RsHMWFS3bBlu3xt3Ebn7ZmXRaBj9VsI8419jGJ9Fwg63bSruqZvkDMKzJs4QKslLPOUtoWdxdnyeYLmnU7gf9Xv00YyYfeWzj",
-  authDomain: "BidZone2.firebaseapp.com",
-  projectId: "BidZone2",
-  storageBucket: "BidZone2.appspot.com",
-  messagingSenderId: "ID",
-  appId: "APP_ID"
-};
 
 // Инициализация
 firebase.initializeApp(firebaseConfig);
