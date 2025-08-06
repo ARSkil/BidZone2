@@ -122,15 +122,6 @@ function closeRegisterModal() {
     document.getElementById("registerModal").style.display = "none";
 }
 
-// Открыть модалку регистрации
-function openRegisterModal() {
-    document.getElementById("registerModal").style.display = "block";
-}
-
-// Закрыть модалку регистрации
-function closeRegisterModal() {
-    document.getElementById("registerModal").style.display = "none";
-}
 
 // Функция регистрации
 function registerUser() {
@@ -153,3 +144,24 @@ function registerUser() {
     alert(`Регистрация успешна!\nДобро пожаловать, ${name}!\nКарта: ${cardName} привязана.`);
     closeRegisterModal();
 }
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBRWdm9N6-mje12iPUS2gU5eAvFrToz9mI",
+  authDomain: "bidzone2-22307.firebaseapp.com",
+  projectId: "bidzone2-22307",
+  storageBucket: "bidzone2-22307.firebasestorage.app",
+  messagingSenderId: "994395619375",
+  appId: "1:994395619375:web:682b4ffee9d4ff604906da",
+  measurementId: "G-97Q254PN7X"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
