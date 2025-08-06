@@ -102,3 +102,53 @@ button:hover {
   border-color: #00a1d6;
   box-shadow: 0 0 5px rgba(0,161,214,0.5);
 }
+
+/* Блок пароля в правом верхнем углу */
+.password-top-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Иконка пароля */
+.password-wrapper {
+  position: relative;
+}
+
+.password-icon {
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  pointer-events: none;
+}
+
+/* Поле пароля и другие поля побольше */
+.password-wrapper input,
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 10px 10px 10px 35px;
+  font-size: 1.1em;
+  width: 250px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Кнопка отмены */
+.cancel-btn {
+  padding: 10px 15px;
+  font-size: 1em;
+  background-color: #ccc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background-color: #bbb;
+}
+
