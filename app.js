@@ -90,15 +90,13 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 });
 
-// Открыть модальное окно
-function openLoginModal() {
-    document.getElementById("loginModal").style.display = "block";
+function openRegisterModal() {
+    document.getElementById("registerModal").style.display = "block";
+}
+function closeRegisterModal() {
+    document.getElementById("registerModal").style.display = "none";
 }
 
-// Закрыть модальное окно
-function closeLoginModal() {
-    document.getElementById("loginModal").style.display = "none";
-}
 
 // Функция входа
 function loginUser() {
