@@ -25,7 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.reload();
   });
 });
-
+const firebaseConfig = { 
+  apiKey : "AIzaSyBRWdm9N6-mje12iPUS2gU5eAvFrToz9mI" , 
+  authDomain : "bidzone2-22307.firebaseapp.com" , 
+  projectId : "bidzone2-22307" , 
+  storageBucket : "bidzone2-22307.firebasestorage.app" , 
+  messagingSenderId : "994395619375" , 
+  appId : "1:994395619375:web:682b4ffee9d4ff604906da" , 
+  MeasurementId : "G-97Q254PN7X" 
+};
 
   // Загружаем товары
   fetch("products.json")
