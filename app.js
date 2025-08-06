@@ -89,3 +89,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 });
+
+// Открыть модальное окно
+function openLoginModal() {
+    document.getElementById("loginModal").style.display = "block";
+}
+
+// Закрыть модальное окно
+function closeLoginModal() {
+    document.getElementById("loginModal").style.display = "none";
+}
+
+// Функция входа
+function loginUser() {
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+    const cardName = document.getElementById("cardName").value;
+
+    if (!email || !password || !cardName) {
+        alert("Пожалуйста, заполните все поля.");
+        return;
+    }
+
+    alert(`Добро пожаловать, ${email}!\nКарта: ${cardName} привязана.`);
+    closeLoginModal();
+}
