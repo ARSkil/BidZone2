@@ -194,4 +194,44 @@ function placeBid(productId) {
 products.forEach(product => {
     startAuctionTimer(product.id, 600);
 });
+// Таймер аукциона (пример — 10 минут)
+let timeLeft = 600; // в секундах (10 минут)
+
+function startAuctionTimer() {
+    const timerElement = document.getElementById("timer1");
+    const timerInterval = setInterval(() => {
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+        timerElement.innerText = `Осталось: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        timeLeft--;
+        if (timeLeft < 0) {
+            clearInterval(timerInterval);
+            timerElement.innerText = "Аукцион завершён";
+        }
+    }, 1000);
+}
+
+// Запуск таймера при загрузке страницы
+startAuctionTimer();
+
+// Отправка ставки
+function placeBid() {
+    const bid = parseFloat(document.getElementById("bidAmount").value);
+    const maxBid = parseFloat(document.getElementById("maxBidAmount").value);
+
+    if (isNaN(bid) || isNaN(maxBid)) {
+        alert("Введите обе суммы ставки");
+        return;
+    }
+    if (bid <= 0 || maxBid <= 0) {
+        alert("Ставка должна быть больше 0");
+        return;
+    }
+    if (bid > maxBid) {
+        alert("Ваша ставка не может быть выше максимальной");
+        return;
+    }
+
+    alert(`Ваша ставка: $${bid}\nМаксимальная ставка: $${maxBid}`);
+}
 
