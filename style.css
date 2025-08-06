@@ -210,4 +210,46 @@ button:hover {
 .btn-group button.cancel {
   background: #ccc;
 }
+.bid-section {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 6px;
+}
+
+.bid-section label {
+  font-size: 14px;
+  display: block;
+  margin-top: 8px;
+}
+
+.bid-section input {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.bid-section button {
+  width: 100%;
+  background: #007bff;
+  color: #fff;
+  padding: 8px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.bid-section button:hover {
+  background: #0056b3;
+}
+
+.auction-timer {
+  font-weight: bold;
+  color: #d9534f;
+  margin-bottom: 10px;
+}
+
 
