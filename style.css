@@ -169,6 +169,30 @@ button:hover {
 }
 
 /* Кнопки */
+.auth-buttons {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.login-btn, .register-btn, .google-btn {
+  background: #007bff;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+}
+
+.register-btn { background: #28a745; }
+.register-btn:hover { background: #1e7e34; }
+
+.google-btn { background: #db4437; }
+.google-btn:hover { background: #c1351d; }
+
 .btn-group {
   display: flex;
   justify-content: space-between;
