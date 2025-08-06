@@ -67,3 +67,23 @@ function placeBid(productId) {
 
     alert(`Ваша ставка: $${bid}\nМаксимальная ставка: $${maxBid}`);
 }
+
+fetch("products.json")
+  .then(res => res.json())
+  .then(products => {
+    const productList = document.getElementById("product-list");
+    products.forEach(product => {
+      const productHTML = `
+        <div class="product-card" onclick="openProduct(${product.id})">
+          <img src="${product.image}" alt="${product.name}">
+          <h3>${product.name}</h3>
+          <p>Цена: $${product.price}</p>
+        </div>
+      `;
+      productList.innerHTML += productHTML;
+    });
+  });
+
+function openProduct(id) {
+  window.location.href = `product.html?id=${id}`;
+}
