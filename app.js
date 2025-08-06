@@ -72,6 +72,11 @@ function createProductCard(product) {
     // Запуск таймера
     updateTimer(timer, product.endTime);
     setInterval(() => updateTimer(timer, product.endTime), 1000);
+  
+    // Для страницы товара
+    const timerElement = document.getElementById('product-timer');
+    updateTimer(timerElement, product.endTime);
+    setInterval(() => updateTimer(timerElement, product.endTime), 1000);
 
     // Кнопка ставки
     const bidButton = document.createElement('button');
