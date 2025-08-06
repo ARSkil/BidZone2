@@ -7,6 +7,35 @@
   <link rel="stylesheet" href="style.css">
   <script defer src="login.js"></script>
 </head>
+<!-- Модальное окно регистрации -->
+<div id="registerModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeRegisterModal()">&times;</span>
+    <h2>Регистрация в BidZone</h2>
+    
+    <label>Имя</label>
+    <input type="text" id="regName" placeholder="Введите имя">
+
+    <label>Email</label>
+    <input type="email" id="regEmail" placeholder="Введите email">
+
+    <label><i class="fa fa-lock"></i> Пароль</label>
+    <input type="password" id="regPassword" placeholder="Введите пароль">
+
+    <label>Подтверждение пароля</label>
+    <input type="password" id="regPasswordConfirm" placeholder="Повторите пароль">
+
+    <label>Имя держателя карты</label>
+    <input type="text" id="regCardName" placeholder="Например: Ivan Ivanov">
+
+    <div class="btn-group">
+      <button onclick="registerUser()">Зарегистрироваться</button>
+      <button class="cancel" onclick="closeRegisterModal()">Отмена</button>
+    </div>
+  </div>
+</div>
+
+  
 <body>
 
 <header>
