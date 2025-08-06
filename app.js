@@ -114,3 +114,44 @@ function loginUser() {
     alert(`Добро пожаловать, ${email}!\nКарта: ${cardName} привязана.`);
     closeLoginModal();
 }
+// Открыть модалку регистрации
+function openRegisterModal() {
+    document.getElementById("registerModal").style.display = "block";
+}
+
+// Закрыть модалку регистрации
+function closeRegisterModal() {
+    document.getElementById("registerModal").style.display = "none";
+}
+
+// Открыть модалку регистрации
+function openRegisterModal() {
+    document.getElementById("registerModal").style.display = "block";
+}
+
+// Закрыть модалку регистрации
+function closeRegisterModal() {
+    document.getElementById("registerModal").style.display = "none";
+}
+
+// Функция регистрации
+function registerUser() {
+    const name = document.getElementById("regName").value;
+    const email = document.getElementById("regEmail").value;
+    const password = document.getElementById("regPassword").value;
+    const passwordConfirm = document.getElementById("regPasswordConfirm").value;
+    const cardName = document.getElementById("regCardName").value;
+
+    if (!name || !email || !password || !passwordConfirm || !cardName) {
+        alert("Пожалуйста, заполните все поля.");
+        return;
+    }
+
+    if (password !== passwordConfirm) {
+        alert("Пароли не совпадают.");
+        return;
+    }
+
+    alert(`Регистрация успешна!\nДобро пожаловать, ${name}!\nКарта: ${cardName} привязана.`);
+    closeRegisterModal();
+}
