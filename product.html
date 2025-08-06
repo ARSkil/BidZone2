@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Товар - BidZone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html">← Назад</a>
+</header>
+
+<main id="product-detail"></main>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const productId = urlParams.get("id");
+
+  fetch("products.json")
+    .then(res => res.json())
+    .then(products => {
+      const product = products.find(p => p.id == productId);
+      if (!product) {
+        document.getElementById("product-detail").innerHTML = "<p>Товар не найден</p>";
+        return;
+      }
+
+      document.getElementById("product-detail").innerHTML = `
+        <div style="padding:20px; max-width:600px; margin:auto; background:white; border-radius:8px;">
+          <img src="${product.image}" style="max-width:100%; border-radius:8px;">
+          <h2>${product.name}</h2>
+          <p>${product.description || "Подробное описание товара"}</p>
+          <p><b>Цена: $${product.price}</b></p>
+          
+          <div>
+            <label>Ваша ставка ($)</label>
+            <input type="number" id="bidAmount" placeholder="Например: 100">
+            <label>Максимальная ставка ($)</label>
+            <input type="number" id="maxBidAmount" placeholder="Например: 200">
+            <button onclick="placeBid()">Сделать ставку</button>
+          </div>
+        </div>
+      `;
+    });
+
+  function placeBid() {
+    const bid = parseFloat(document.getElementById("bidAmount").value);
+    const maxBid = parseFloat(document.getElementById("maxBidAmount").value);
+
+    if (isNaN(bid) || isNaN(maxBid)) {
+      alert("Введите обе суммы ставки");
+      return;
+    }
+    if (bid <= 0 || maxBid <= 0) {
+      alert("Ставка должна быть больше 0");
+      return;
+    }
+    if (bid > maxBid) {
+      alert("Ваша ставка не может быть выше максимальной");
+      return;
+    }
+
+    alert(`Ваша ставка: $${bid}, максимальная: $${maxBid}`);
+  }
+</script>
+
+</body>
+</html>
