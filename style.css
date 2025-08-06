@@ -28,7 +28,7 @@ header {
 }
 
 .product-card img {
-    max-width: 50px;
+    max-width: 100px;
     height: auto;
 }
 
@@ -44,7 +44,7 @@ header {
 }
 
 .bid-section input {
-    width: 100%;
+    width: 95%;
     padding: 6px;
     margin-top: 4px;
     border: 1px solid #ccc;
