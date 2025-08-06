@@ -5,26 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BidZone - Вход</title>
   <link rel="stylesheet" href="style.css">
-  <script defer src="login
+  <script defer src="login.js"></script>
 </head>
 <body>
-  <header>
-    <h1>BidZone</h1>
-  </header>
 
-  <main style="text-align:center; padding:50px;">
-    <h2>Вход или регистрация</h2>
+<header>
+  <h1>BidZone</h1>
+</header>
 
-    <div id="nameField" style="display:none;">
-      <input type="text" id="fullName" placeholder="Ваше имя">
-    </div>
-
-    <input type="email" id="email" placeholder="Email">
+<!-- Пароль в правом верхнем углу -->
+<div class="password-top-right">
+  <div class="password-wrapper">
+    <span class="password-icon">🔒</span>
     <input type="password" id="password" placeholder="Пароль">
+  </div>
+  <button class="cancel-btn" onclick="window.location.href='index.html'">Отмена</button>
+</div>
 
-    <br><br>
-    <button id="loginBtn">Войти</button>
-    <button id="registerBtn">Регистрация</button>
-  </main>
+<main style="text-align:center; padding:50px;">
+  <h2>Вход или регистрация</h2>
+
+  <div id="nameField" style="display:none;">
+    <input type="text" id="fullName" placeholder="Ваше имя">
+  </div>
+
+  <input type="email" id="email" placeholder="Email">
+
+  <br><br>
+  <button id="loginBtn">Войти</button>
+  <button id="registerBtn">Регистрация</button>
+</main>
+
 </body>
 </html>
