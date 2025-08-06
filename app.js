@@ -11,7 +11,7 @@ fetch("products.json")
                     <p>Цена: $${product.price}</p>
 
                     <div class="bid-section">
-                        <div class="auction-timer" id="timer-${product.id}">Осталось: 00:10:00</div>
+                        <div class="auction-timer" id="timer-${product.id}">Осталось: 24:00:00</div>
 
                         <label>Ваша ставка ($)</label>
                         <input type="number" id="bidAmount-${product.id}" placeholder="Например: 100">
