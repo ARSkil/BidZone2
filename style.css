@@ -44,7 +44,7 @@ header {
 }
 
 .bid-section input {
-    width: 50%;
+    width: 10%;
     padding: 6px;
     margin-top: 4px;
     border: 1px solid #ccc;
@@ -53,7 +53,7 @@ header {
 
 .bid-section button {
     margin-top: 8px;
-    width: 100%;
+    width: 10%;
     background: #007bff;
     color: white;
     padding: 8px;
