@@ -152,3 +152,46 @@ const firebaseConfig = {
   appId : "1:994395619375:web:682b4ffee9d4ff604906da" , 
   MeasurementId : "G-97Q254PN7X" 
 };
+
+function startAuctionTimer(productId, seconds) {
+    let timeLeft = seconds;
+    const timerElement = document.getElementById(`timer-${productId}`);
+
+    const interval = setInterval(() => {
+        let minutes = Math.floor(timeLeft / 60);
+        let secs = timeLeft % 60;
+        timerElement.innerText = `Осталось: ${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+
+        timeLeft--;
+        if (timeLeft < 0) {
+            clearInterval(interval);
+            timerElement.innerText = "Аукцион завершён";
+        }
+    }, 1000);
+}
+
+function placeBid(productId) {
+    const bid = parseFloat(document.getElementById(`bidAmount-${productId}`).value);
+    const maxBid = parseFloat(document.getElementById(`maxBidAmount-${productId}`).value);
+
+    if (isNaN(bid) || isNaN(maxBid)) {
+        alert("Введите обе суммы ставки");
+        return;
+    }
+    if (bid <= 0 || maxBid <= 0) {
+        alert("Ставка должна быть больше 0");
+        return;
+    }
+    if (bid > maxBid) {
+        alert("Ваша ставка не может быть выше максимальной");
+        return;
+    }
+
+    alert(`Ваша ставка: $${bid}\nМаксимальная ставка: $${maxBid}`);
+}
+
+// Запускаем таймеры для всех товаров (10 минут)
+products.forEach(product => {
+    startAuctionTimer(product.id, 600);
+});
+
