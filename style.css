@@ -119,6 +119,22 @@ button:hover {
   background: #0056b3;
 }
 
+/* Кнопка регистрации */
+.register-btn {
+  position: absolute;
+  top: 15px;
+  right: 100px;
+  background: #28a745;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.register-btn:hover {
+  background: #1e7e34;
+}
+
 /* Модальное окно */
 .modal {
   display: none;
