@@ -1,31 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BidZone - Catalog</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .grid { display: flex; flex-wrap: wrap; gap: 15px; }
-        .card {
-            width: 200px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            overflow: hidden;
-            text-decoration: none;
-            color: black;
-            background: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-        .card:hover { transform: scale(1.05); }
-        .card img { width: 100%; height: 140px; object-fit: cover; }
-        .card-content { padding: 10px; }
-        .card-title { font-size: 16px; font-weight: bold; }
-        .card-price { color: green; font-weight: bold; margin-top: 5px; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BidZone — Главная</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- HEADER (будет рендерить main.js) -->
+  <div id="site-header"></div>
+
+  <main class="container">
+    <h1 class="page-title">Каталог товаров</h1>
+    <div id="product-list" class="product-list"></div>
+  </main>
+
+  <script src="main.js"></script>
+  <script>
+    // инициация домашней страницы
+    document.addEventListener('DOMContentLoaded', async () => {
+      await app.renderHeader();     // рендер шапки
+      await app.renderProductList(); // рендер каталога
+    });
+  </script>
+
+</html>
 
 <h1>BidZone Catalog</h1>
 <div class="grid" id="productList"></div>
