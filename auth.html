@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BidZone — Вход / Регистрация</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container narrow">
+    <h1>Вход / Регистрация</h1>
+
+    <div class="card">
+      <h3>Войти</h3>
+      <input id="loginEmail" placeholder="Email" type="email">
+      <input id="loginPassword" placeholder="Пароль" type="password">
+      <div class="row">
+        <button id="btnLogin">Войти</button>
+        <button id="btnGotoRegister" class="secondary">Регистрация</button>
+      </div>
+    </div>
+
+    <div class="card" id="registerCard" style="display:none; margin-top:12px;">
+      <h3>Создать аккаунт</h3>
+      <input id="regName" placeholder="Имя и фамилия">
+      <input id="regEmail" placeholder="Email">
+      <input id="regPhone" placeholder="Телефон (опционально)">
+      <input id="regPassword" placeholder="Пароль" type="password">
+      <div class="row">
+        <button id="btnRegister">Создать</button>
+        <button id="btnCancelRegister" class="secondary">Отмена</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      await app.renderHeader();
+
+      document.getElementById('btnGotoRegister').onclick = () => {
+        document.getElementById('registerCard').style.display = 'block';
+      };
+      document.getElementById('btnCancelRegister').onclick = () => {
+        document.getElementById('registerCard').style.display = 'none';
+      };
+
+      document.getElementById('btnRegister').onclick = async () => {
+        const name = document.getElementById('regName').value.trim();
+        const email = document.getElementById('regEmail').value.trim();
+        const phone = document.getElementById('regPhone').value.trim();
+        const password = document.getElementById('regPassword').value;
+
+        try {
+          await app.register({ name, email, phone, password });
+          alert('Регистрация успешна — вы вошли в аккаунт');
+          location.href = 'index.html';
+        } catch (e) { alert(e.message); }
+      };
+
+      document.getElementById('btnLogin').onclick = async () => {
+        const email = document.getElementById('loginEmail').value.trim();
+        const password = document.getElementById('loginPassword').value;
+        try {
+          await app.login(email, password);
+          alert('Вход выполнен');
+          location.href = 'index.html';
+        } catch (e) { alert(e.message); }
+      };
+    });
+  </script>
+</body>
+</html>
