@@ -1,22 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .product-container { max-width: 600px; margin: auto; border: 1px solid #ccc; border-radius: 8px; padding: 20px; background: white; }
-        img { width: 100%; border-radius: 8px; }
-        h2 { margin: 10px 0; }
-        .price { color: green; font-size: 20px; }
-        .timer { font-size: 18px; color: red; margin-top: 10px; }
-        .bid-section { margin-top: 20px; }
-        input { padding: 5px; margin-right: 10px; }
-        button { padding: 6px 12px; background: blue; color: white; border: none; cursor: pointer; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BidZone — Товар</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="site-header"></div>
+
+  <main class="container">
+    <div id="product-detail"></div>
+  </main>
+
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      await app.renderHeader();
+      await app.renderProductPage(); // рендерит страницу товара на основе ?id=...
+    });
+  </script>
+</body>
+</html>
+
 
 <div class="product-container">
     <img id="productImg" src="" alt="Product">
