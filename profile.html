@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BidZone — Профиль</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container narrow">
+    <h1>Профиль</h1>
+
+    <div class="card">
+      <div class="row">
+        <img id="profilePhoto" src="" alt="Фото" class="avatar">
+        <div style="flex:1;">
+          <label>Имя</label>
+          <input id="profileName" type="text">
+          <label>Email</label>
+          <input id="profileEmail" type="email">
+          <label>Телефон</label>
+          <input id="profilePhone" type="text">
+          <label>Карта привязана</label>
+          <div class="row" style="align-items:center;">
+            <input id="cardLinkedCheckbox" type="checkbox"><span style="margin-left:8px">Да</span>
+          </div>
+        </div>
+      </div>
+
+      <label>Загрузить фото</label>
+      <input id="profilePhotoInput" type="file" accept="image/*">
+
+      <div class="row">
+        <button id="saveProfile">Сохранить профиль</button>
+        <button id="deleteAccount" class="danger">Удалить аккаунт</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      await app.renderHeader();
+      const user = await app.getCurrentUserOrRedirect();
+
+      // заполнить поля
+      document.getElementById('profileName').value = user.name || '';
+      document.getElementById('profileEmail').value = user.email || '';
+      document.getElementById('profilePhone').value = user.phone || '';
+      document.getElementById('cardLinkedCheckbox').checked = !!user.cardLinked;
+      document.getElementById('profilePhoto').src = user.photo || 'https://via.placeholder.com/100';
+
+      document.getElementById('profilePhotoInput').addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          document.getElementById('profilePhoto').src = reader.result;
+        };
+        reader.readAsDataURL(file);
+      });
+
+      document.getElementById('saveProfile').onclick = async () => {
+        const updated = {
+          name: document.getElementById('profileName').value.trim(),
+          email: document.getElementById('profileEmail').value.trim(),
+          phone: document.getElementById('profilePhone').value.trim(),
+          cardLinked: document.getElementById('cardLinkedCheckbox').checked,
+          photo: document.getElementById('profilePhoto').src
+        };
+        await app.updateProfile(updated);
+        alert('Профиль сохранён');
+        await app.renderHeader(); // обновить отображение
+      };
+
+      document.getElementById('deleteAccount').onclick = async () => {
+        if (!confirm('Удалить аккаунт?')) return;
+        await app.deleteCurrentUser();
+        alert('Аккаунт удалён');
+        location.href = 'index.html';
+      };
+    });
+  </script>
+</body>
+</html>
