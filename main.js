@@ -348,3 +348,4 @@ const app = (function(){
     placeBid // direct
   };
 })();
+
