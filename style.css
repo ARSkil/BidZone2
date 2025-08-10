@@ -55,3 +55,4 @@ input[type=text],input[type=email],input[type=password],input[type=number],texta
 
 /* notification */
 .toast{position:fixed;right:20px;top:80px;background:#28a745;color:#fff;padding:10px 14px;border-radius:6px;box-shadow:0 3px 8px rgba(0,0,0,0.12);display:none;z-index:20}
+
