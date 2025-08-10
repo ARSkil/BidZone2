@@ -2,26 +2,26 @@
   {
     "id": 1,
     "name": "Электросамокат Xiaomi",
-    "price": 300,
+    "price": 1,
     "image": "https://via.placeholder.com/600x360?text=Xiaomi+Scooter",
     "description": "Мощный электросамокат Xiaomi, запас хода 30 км.",
-    "endTime": "2025-12-31T23:59:59"
+    "endTime": "2025-08-13T23:59:59"
   },
   {
     "id": 2,
     "name": "Смартфон Pro",
-    "price": 600,
+    "price": 1,
     "image": "https://via.placeholder.com/600x360?text=Smartphone+Pro",
     "description": "Флагманский смартфон с отличной камерой.",
-    "endTime": "2025-12-30T20:00:00"
+    "endTime": "2025-08-13T20:00:00"
   },
   {
     "id": 3,
     "name": "Игровой ноутбук",
-    "price": 1500,
+    "price": 1,
     "image": "https://via.placeholder.com/600x360?text=Gaming+Laptop",
     "description": "Мощный ноутбук для игр и работы.",
-    "endTime": "2025-12-29T18:30:00"
+    "endTime": "2025-08-13T18:30:00"
   }
 ]
 
